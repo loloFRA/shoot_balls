@@ -11,7 +11,7 @@ let checkBoxAudio = false, effetBigBoom = false, move = false
 const srcSoundSelect = "audio/selected.mp3"
 const srcSoundBoom = "audio/sbomb.mp3"
 const srcSoundEnd = "audio/end.mp3"
-const srcSoundBigBoom = "bigBoom.mp3"
+const srcSoundBigBoom = "audio/bigBoom.mp3"
 
 const random = (max=1, min=0) => Math.random() * (max - min) + min;
 
