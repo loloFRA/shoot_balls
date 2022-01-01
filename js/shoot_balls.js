@@ -37,7 +37,7 @@ class Dot extends DotS{
 		this.boom = boom || false
 		this.nextY = y
 		this.isolate = false
-		this.speed = 0.7
+		this.speed = 0.5
 	}
 	fall() {
 		if(this.y<=this.nextY)this.y += this.speed
@@ -89,8 +89,8 @@ class Boom {
 		ctx.closePath()	 
 	}
 	update() {
-		this.x += 3*Math.cos(this.a)
-		this.y += 3*Math.sin(this.a)
+		this.x += 2*Math.cos(this.a)
+		this.y += 2*Math.sin(this.a)
 		this.draw()
 	}
 }
@@ -319,8 +319,8 @@ const checkPlayer = () => {
 	}
 	if(player.run){
 		if(player.x<rad||player.x>W-rad) player.t = Math.PI-player.t  
-		player.x = player.x + 14*Math.cos(player.t) 
-		player.y = player.y + 14*Math.sin(player.t) 
+		player.x = player.x + 12*Math.cos(player.t) 
+		player.y = player.y + 12*Math.sin(player.t) 
 	}
 	
 }
@@ -408,7 +408,7 @@ const newPlayer = () => {
 const animBooms = () => {
 	for(let i = booms.length-1; i>=0; i--){
 		booms[i].update()
-		booms[i].rad-=0.7
+		booms[i].rad-=0.5
 		if(booms[i].rad <=0.6)booms.splice(i, 1); 								   
 	} 
 }
@@ -443,7 +443,7 @@ const checkDotsIsolate = (counter) => {
 	for(let i = 0; i<dots.length; i++){
 		if(dots[i].isolate == true){
 			dots[i].nextY = H
-			dots[i].speed = 7
+			dots[i].speed = 8
 			if(counter)countPoints++
 		}	   							   
 	}
