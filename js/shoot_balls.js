@@ -50,7 +50,7 @@ class Dot extends DotS{
 		ctx.closePath()	 
 	}
 	update() {
-		this.color = radColor(this.x+rad/3,  this.y+rad/3, 0, this.x-rad/2,  this.y-rad/2, diam, this.c)
+		this.color = radColor(this.x, this.y-rad/2, 0, this.x,  this.y, diam, this.c)
 		this.fall()
 		this.draw()
 	}
@@ -65,7 +65,7 @@ class Player extends DotS{
 		this.t = 0
 	}
 	update() {
-		this.color = radColor(this.x+rad/3,  this.y+rad/3, 0, this.x-rad/2,  this.y-rad/2, diam, this.c)
+		this.color = radColor(this.x,  this.y-rad/2, 0, this.x,  this.y, diam, this.c)
 		ctx.beginPath()
 		ctx.fillStyle =  this.color
 		ctx.arc(this.x, this.y, this.rad, 0, 2 * Math.PI)
