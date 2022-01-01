@@ -8,10 +8,10 @@ let mouse, touch
 let lastTimeCalled
 let countPoints = 0, lineEndY = 0, nbrBallsLevel = 4, progress = 0
 let checkBoxAudio = false, effetBigBoom = false, move = false
-const srcSoundSelect = "https://lolofra.github.io/balls/audio/selected.mp3"
-const srcSoundBoom = "https://lolofra.github.io/balls/audio/sbomb.mp3"
-const srcSoundEnd = "https://lolofra.github.io/balls/audio/end.mp3"
-const srcSoundBigBoom = "https://lolofra.github.io/balls/audio/bigBoom.mp3"
+const srcSoundSelect = "audio/selected.mp3"
+const srcSoundBoom = "audio/sbomb.mp3"
+const srcSoundEnd = "audio/end.mp3"
+const srcSoundBigBoom = "bigBoom.mp3"
 
 const random = (max=1, min=0) => Math.random() * (max - min) + min;
 
