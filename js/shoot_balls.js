@@ -37,7 +37,7 @@ class Dot extends DotS{
 		this.boom = boom || false
 		this.nextY = y
 		this.isolate = false
-		this.speed = 1
+		this.speed = 0.7
 	}
 	fall() {
 		if(this.y<=this.nextY)this.y += this.speed
@@ -89,8 +89,8 @@ class Boom {
 		ctx.closePath()	 
 	}
 	update() {
-		this.x += 4*Math.cos(this.a)
-		this.y += 4*Math.sin(this.a)
+		this.x += 3*Math.cos(this.a)
+		this.y += 3*Math.sin(this.a)
 		this.draw()
 	}
 }
@@ -319,8 +319,8 @@ const checkPlayer = () => {
 	}
 	if(player.run){
 		if(player.x<rad||player.x>W-rad) player.t = Math.PI-player.t  
-		player.x = player.x + 17*Math.cos(player.t) 
-		player.y = player.y + 17*Math.sin(player.t) 
+		player.x = player.x + 14*Math.cos(player.t) 
+		player.y = player.y + 14*Math.sin(player.t) 
 	}
 	
 }
@@ -376,7 +376,7 @@ const blastStar = (x, y, sizeFont, a) => {
 }
 
 const createEffet = () => {
-	progress+=25;
+	progress+=20;
 	blastRings(W/2, H/2, progress, 10, "white");
 	blastRings(W/2, H/2, progress - 30, 15, "yellow");
 	blastRings(W/2, H/2, progress - 50, 20, "orange");
@@ -408,7 +408,7 @@ const newPlayer = () => {
 const animBooms = () => {
 	for(let i = booms.length-1; i>=0; i--){
 		booms[i].update()
-		booms[i].rad-=1
+		booms[i].rad-=0.7
 		if(booms[i].rad <=0.6)booms.splice(i, 1); 								   
 	} 
 }
